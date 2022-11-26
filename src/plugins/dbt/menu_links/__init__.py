@@ -1,0 +1,1 @@
+"""ShiruFlow dbt Menu Links."""

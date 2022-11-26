@@ -1,0 +1,15 @@
+config:
+  use_colors: true
+
+dbt_profile:
+  target: test
+  outputs:
+    dwh:
+      type: postgres
+      host: "{{ env_var('DBT_DWH_POSTGRES_HOST') }}"
+      user: "{{ env_var('DBT_DWH_POSTGRES_USERNAME') }}"
+      password: "{{ env_var('DBT_DWH_POSTGRES_PASSWORD') }}"
+      port: "{{ env_var('DBT_DWH_POSTGRES_PORT') | as_number }}"
+      dbname: "{{ env_var('DBT_DWH_POSTGRES_DATABASE') }}"
+      schema: "{{ env_var('DBT_DWH_POSTGRES_SCHEMA') }}"
+      threads: "{{ env_var('DBT_DWH_POSTGRES_THREADS') | as_number }}"

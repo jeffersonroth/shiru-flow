@@ -1,0 +1,26 @@
+
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    restart: always
+    environment:
+      - POSTGRES_USER=$POSTGRES_USERNAME
+      - POSTGRES_PASSWORD=$POSTGRES_PASSWORD
+      - POSTGRES_DB=$POSTGRES_DATABASE
+    volumes:
+      - ./db:/var/lib/postgresql/data
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf
+      - ./pg_hba.conf:/etc/postgresql/pg_hba.conf
+      - ./setup-db:/docker-entrypoint-initdb.d
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    networks:
+      - shiru-flow
+    ports:
+      - $POSTGRES_PORT_FORWARD:$POSTGRES_PORT
+    container_name: shiru-flow-db
+
+networks:
+  shiru-flow:
+    driver: bridge

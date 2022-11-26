@@ -1,8 +1,10 @@
+"""ShiruFlow Template Plugin."""
+
 from airflow.plugins_manager import AirflowPlugin
 
 
-class DbtShiruFlowPlugin(AirflowPlugin):
-    name = "DbtShiruFlowPlugin"
+class ShiruFlowTemplatePlugin(AirflowPlugin):
+    name = "ShiruFlowTemplatePlugin"
     operators = []
     hooks = []
     executors = []

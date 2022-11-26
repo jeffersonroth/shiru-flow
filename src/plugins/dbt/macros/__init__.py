@@ -1,1 +1,0 @@
-"""ShiruFlow dbt Macros."""

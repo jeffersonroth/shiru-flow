@@ -1,0 +1,14 @@
+.aws/*
+
+# dbt projects
+dags/dbt/projects/*
+!dags/dbt/projects/test_project/
+
+# Postgres
+db-data/
+
+# Logs
+logs/
+
+# Tmp files
+tmp/

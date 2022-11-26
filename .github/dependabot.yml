@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "apache-airflow*"
+      - dependency-name: "alembic*"
+      - dependency-name: "sqlalchemy*"
+      - dependency-name: "SQLAlchemy*"
